@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Your Way</title>
+    <title>DESIGN <span style="color: red;">YOUR</span> WAY</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -29,12 +29,13 @@
     </style>
 </head>
 <body>
-    <h1>Design Your Way</h1>
-    <h2>Changing how designers interact with Figma</h2>
-    <input type="text" id="figmaLink" placeholder="Paste your Figma link here...">
-    <input type="file" id="uploadDesign" accept="image/jpeg, image/png">
-    <button id="generate">Generate</button>
-    <div id="result"></div>
+    <div class="container">
+        <h1>DESIGN <span style="color: red;">YOUR</span> WAY</h1>
+        <p>For the brave and bold designers like you</p>
+        <input type="text" id="figmaLink" placeholder="Type a prompt or paste your link">
+        <button class="generate">Generate</button>
+        <button class="regenerate">Regenerate</button>
+    </div>
     <script>
         document.getElementById('generate').addEventListener('click', function() {
             const link = document.getElementById('figmaLink').value;
