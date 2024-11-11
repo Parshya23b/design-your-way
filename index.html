@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Your Way</title>
+    <title>DESIGN <span style="color: red;">YOUR</span> WAY</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -26,23 +26,42 @@
             color: white;
             cursor: pointer;
         }
+        .design-output {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid white;
+            background-color: #222;
+            color: white;
+            display: none; /* Initially hidden */
+        }
     </style>
 </head>
 <body>
-    <h1>Design Your Way</h1>
-    <h2>Changing how designers interact with Figma</h2>
-    <input type="text" id="figmaLink" placeholder="Paste your Figma link here...">
-    <input type="file" id="uploadDesign" accept="image/jpeg, image/png">
-    <button id="generate">Generate</button>
-    <div id="result"></div>
+    <div class="container">
+        <h1>DESIGN <span style="color: red;">YOUR</span> WAY</h1>
+        <p>For the brave and bold designers like you</p>
+        <input type="text" id="userInput" placeholder="Type a prompt or paste your link">
+        <button class="generate" id="generateButton">Generate</button>
+        <button class="regenerate">Regenerate</button>
+        <div id="designOutput" class="design-output"></div>
+    </div>
     <script>
-        document.getElementById('generate').addEventListener('click', function() {
-            const link = document.getElementById('figmaLink').value;
-            const fileInput = document.getElementById('uploadDesign').files[0];
-            if (link || fileInput) {
-                alert('Generating design from the provided link or uploaded file...');
+        document.getElementById('generateButton').addEventListener('click', function() {
+            const userInput = document.getElementById('userInput').value;
+            const designOutput = document.getElementById('designOutput');
+
+            // Simple logic to generate a design based on user input
+            if (userInput) {
+                designOutput.style.display = 'block'; // Show the output section
+                designOutput.innerHTML = `<h2>Generated Design for: ${userInput}</h2>
+                                          <p>This could be a mockup for a food delivery app or any other design based on your input.</p>
+                                          <div style="background: #f8f8f8; padding: 20px; border-radius: 5px;">
+                                              <h3>Sample Design</h3>
+                                              <p>Imagine a layout with a list of restaurants, a search bar, and a cart icon.</p>
+                                          </div>`;
             } else {
-                alert('Please enter a Figma link or upload a design.');
+                designOutput.style.display = 'none'; // Hide if no input
+                alert('Please enter a prompt or link.');
             }
         });
     </script>
