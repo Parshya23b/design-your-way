@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Your Way</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        #figmaLink {
+            width: 80%;
+            height: 50px;
+            margin-bottom: 20px;
+        }
+        #uploadDesign {
+            margin-bottom: 20px;
+        }
+        #generate {
+            padding: 10px 20px;
+            background-color: #0070f3;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Design Your Way</h1>
+    <h2>Changing how designers interact with Figma</h2>
+    <input type="text" id="figmaLink" placeholder="Paste your Figma link here...">
+    <input type="file" id="uploadDesign" accept="image/jpeg, image/png">
+    <button id="generate">Generate</button>
+    <div id="result"></div>
+    <script>
+        document.getElementById('generate').addEventListener('click', function() {
+            const link = document.getElementById('figmaLink').value;
+            const fileInput = document.getElementById('uploadDesign').files[0];
+            if (link || fileInput) {
+                alert('Generating design from the provided link or uploaded file...');
+            } else {
+                alert('Please enter a Figma link or upload a design.');
+            }
+        });
+    </script>
+</body>
+</html>
